@@ -1,15 +1,14 @@
-import React from "react";
+const Tour=(props)=>{
+return(
+  <>
+<h2>{props.name}</h2>
+ <img src={props.image} alt={props.name} />
 
-function Tours(info) {
-  return (
-    <>
-      <div>
-        <h2>{info.name}</h2>
+  </>
+)
 
-        <img src={info.image_url} alt={info.name} />
-      </div>
-    </>
-  );
 }
 
-export default Tours;
+
+
+export default Tour;

@@ -1,37 +1,51 @@
 
-import React, { useState } from "react";
+import { useParams } from "react-router";
+import { useState } from "react";
+const data= require('../../data/db.json');
 
 
-function allDescription({
 
 
-    return description;
-})
-
-function DetailPage() {
-  const [showFullDescription, setShowFullDescription] = useState(false);
-}
-
-
-function TourDetails(props){
-
-const description = props.description;
+const TourDetails =()=> {
+  let {id}=useParams();
+const [readMore,setReadMore]= useState(false)
+return(
+  <>
  {
-   data.map((element) => {
-     return <Tours name={element.name} image_url={element.image} />;
-   });
+
+  data.map(i =>{
+    if(i.id === id){
+      return (
+        <div>
+          <h2>{i.name}</h2>
+          <img src={i.image} alt={i.name} />
+          <p>{i.price}</p>
+          <div>
+            {readMore ? (
+              <>
+                <p>{i.info}</p>
+                <button onClick={() => setReadMore(false)}>show less</button>
+              </>
+            ) :
+              <>
+                <p>{(i.info.substring(0,200))}</p>
+                <button onClick={() => setReadMore(true)}>show more </button>
+              </>
+            }
+          </div>
+        </div>
+      );
+    }
+  }
+
+  )
+
+
  }
 
-  return (
-    <div>
-      <h1>Detail Page</h1>
-      <p>{showFullDescription ? description : shortDescription}</p>
-      <button onClick={allDescription}>
-     see more
-      </button>
-    </div>
-  );
 
+  </>
+)
 
 
 }

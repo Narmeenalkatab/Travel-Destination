@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
+    <h1>Tours Destination</h1>
       <nav>
         <Link to="/">home</Link>
       </nav>
 
-      <nav>
-        <Link to="/city/:id">about</Link>
-      </nav>
+
     </>
   );
 };

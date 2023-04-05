@@ -4,18 +4,23 @@ import Tours from "../tours/Tours.js";
 import Footer from "../footer/Footer.js";
 
 function Home (props){
-const data = props.data;
+// const data = props.data;
     return(
         <>
 
 
 <Header/>
 
- {  data.map(element=>{
+
+<Tours data={props.data}/>
+
+
+
+ {/* {  data.map(element=>{
           return(
             <Tours name ={element.name} image_url={element.image}/>
           )
-        })}
+        })} */}
 
 <Footer/>
 

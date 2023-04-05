@@ -11,12 +11,11 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/city/:id" element={<TourDetails />}></Route>
+        <Route path="/" element={<Home data={Data1} />}></Route>
+        <Route path="/city/:id" element={<TourDetails description={Data1}/>}></Route>
       </Routes>
 
-      <Home data={Data1} />
-      <TourDetails description={Data1}/>
+  
     </div>
   );
 }
